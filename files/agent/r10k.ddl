@@ -15,7 +15,7 @@ metadata :name        => "r10k",
            :description => "Operating on #{act}",
            :type        => :string,
            :validation  => '.',
-           :optional    => false,
+           :optional    => true,
            :maxlength   => 256
 
    input :user,

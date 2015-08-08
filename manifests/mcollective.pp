@@ -25,9 +25,9 @@ class r10k::mcollective (
     source => "puppet:///modules/${module_name}/agent/${agent_ddl}",
   }
 
-  # Install the application file (all masters at the moment)
+  # Install the agent file (all masters at the moment)
   file { "${agent_path}/${agent_name}":
-    content => template("${module_name}/agent/${agent_name}.erb"),
+    source => "puppet:///modules/${module_name}/agent/${agent_name}",
     require => File["${agent_path}/${agent_ddl}"],
   }
 
